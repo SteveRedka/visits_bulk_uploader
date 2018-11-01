@@ -134,6 +134,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
   rspec
   sqlite3
   visits_bulk_uploader!
