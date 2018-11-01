@@ -25,3 +25,5 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task default: :test
+
+Dir.glob('lib/tasks/*.rake').each {|r| import r}

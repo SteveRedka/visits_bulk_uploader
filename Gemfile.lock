@@ -148,6 +148,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   byebug
+  rake
   rspec
   rspec-rails
   sqlite3
