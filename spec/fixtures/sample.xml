@@ -1,0 +1,14 @@
+<visits>
+<visit>
+  <id>1</id>
+  <start_at>2018-09-24-06:00</start_at>
+  <end_at>2018-09-24-07:00</end_at>
+  <sum>10.99</sum>
+</visit>
+<visit>
+  <id>2</id>
+  <start_at>2018-10-26-12:03</start_at>
+  <end_at>2018-10-26-12:16</end_at>
+  <sum>1148.02</sum>
+</visit>
+</visits>

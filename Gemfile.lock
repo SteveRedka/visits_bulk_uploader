@@ -2,7 +2,9 @@ PATH
   remote: .
   specs:
     visits_bulk_uploader (0.1.0)
+      nokogiri
       rails (~> 5.2.1)
+      saxerator
 
 GEM
   remote: https://rubygems.org/
@@ -50,6 +52,7 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     builder (3.2.3)
+    byebug (10.0.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     diff-lcs (1.3)
@@ -113,7 +116,16 @@ GEM
     rspec-mocks (3.8.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
+    rspec-rails (3.8.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+      rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
+    saxerator (0.9.8)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -135,7 +147,9 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  byebug
   rspec
+  rspec-rails
   sqlite3
   visits_bulk_uploader!
 
