@@ -1,10 +1,9 @@
 require 'visits_bulk_uploader/uploader'
 require 'optionparser'
-require 'byebug'
 
 namespace :visits_bulk_uploader do
   desc 'Import Visits from xml file'
-  task :import do
+  task import: :environment do
     filters = {}
     path_to_file = ''
 

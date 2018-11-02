@@ -15,6 +15,7 @@ visits_bulk_uploader:import -- --file /tmp/visits.xml --min_end_at 3.2.2001 04:0
 ```
 To use it within the project:
 ```
+require 'visits_bulk_uploader/uploader'
 VisitsBulkUploader::Uploader.new(path_to_file, filters).call
 ```
 

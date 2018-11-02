@@ -3,6 +3,7 @@ $VERBOSE = nil
 
 require 'spec_helper'
 require 'rake'
+Rake::Task.define_task(:environment)
 load File.expand_path("#{RSPEC_ROOT}/../lib/tasks/visits_bulk_uploader_tasks.rake")
 
 describe 'visits_bulk_uploader_tasks' do
