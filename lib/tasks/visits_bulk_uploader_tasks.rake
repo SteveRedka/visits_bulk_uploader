@@ -36,6 +36,9 @@ namespace :visits_bulk_uploader do
 
     raise OptionParser::MissingArgument if path_to_file.empty?
 
+    puts 'Creating Visits'
+    @starting_visit_count = Visit.count
     VisitsBulkUploader::Uploader.new(path_to_file, filters).call
+    puts "Done. Visits created: #{Visit.count - @starting_visit_count}"
   end
 end
