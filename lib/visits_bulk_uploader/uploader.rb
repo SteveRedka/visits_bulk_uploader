@@ -2,14 +2,13 @@ require 'visits_bulk_uploader/parsers/xml'
 
 module VisitsBulkUploader
   class Uploader
-    def initialize(file_path)
-      # def initialize(file_path, sum_min = 0, sum_max = Float::INFINITY,
-      #                min_start_at = nil, max_start_at = nil)
+    def initialize(file_path, filters = {})
       @file = File.open(file_path)
+      @filters = filters
     end
 
     def call
-      VisitsBulkUploader::Parsers::XML.new(@file).call
+      VisitsBulkUploader::Parsers::XML.new(@file, @filters).call
     end
   end
 end

@@ -11,6 +11,13 @@ describe 'Uploader' do
     end.to change { Visit.count }.by(2)
   end
 
+  it 'filters by min sum' do
+    expect do
+      VisitsBulkUploader::Parsers::XML.new(file, min_sum: 100).call
+    end.to change { Visit.count }.by(1)
+    expect(Visit.last.sum).to eq(1148.02)
+  end
+
   it 'doesn`t create Visits from invalid xml files' do
     invalid_sample_location = "#{RSPEC_ROOT}/fixtures/not_xml"
     invalid_file = File.open(invalid_sample_location)
