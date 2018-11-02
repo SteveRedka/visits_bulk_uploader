@@ -1,5 +1,4 @@
-require 'nokogiri'
-require 'saxerator'
+require 'visits_bulk_uploader/parsers/xml'
 
 module VisitsBulkUploader
   class Uploader
@@ -10,16 +9,7 @@ module VisitsBulkUploader
     end
 
     def call
-      parser = Saxerator.parser(@file)
-      parser.for_tag(:visit).each do |input|
-        input = input.transform_values { |v| v.to_s }
-        params = { sum: input['sum'], start_at: input['start_at'],
-                   end_at: input['end_at'] }
-        visit = Visit.new(params)
-        # Assuming id is actually needed
-        visit.external_id = input['id'] if visit.respond_to?(:external_id)
-        visit.save!
-      end
+      VisitsBulkUploader::Parsers::XML.new(@file).call
     end
   end
 end
