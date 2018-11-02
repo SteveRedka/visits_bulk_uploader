@@ -20,10 +20,7 @@ module VisitsBulkUploader
 
           next unless VisitsBulkUploader::Filter.new(@params, @filters).passes?
 
-          visit = Visit.new(@params)
-          # Assuming id is actually needed
-          visit.external_id = input['id'] if visit.respond_to?(:external_id)
-          visit.save!
+          visit = Visit.create!(@params)
         end
       end
     end
