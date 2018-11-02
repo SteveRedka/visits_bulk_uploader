@@ -16,6 +16,11 @@ visits_bulk_uploader:import -- --file /tmp/visits.xml --min_end_at 3.2.2001 04:0
 To use it within the project:
 ```
 require 'visits_bulk_uploader/uploader'
+
+path_to_file = '/tmp/sample.xml'
+filters = { min_sum: 100, max_sum: 200, 
+            max_end_at: 3.days.ago, min_end_at: 5.days.ago }
+
 VisitsBulkUploader::Uploader.new(path_to_file, filters).call
 ```
 
